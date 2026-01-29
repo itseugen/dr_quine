@@ -16,3 +16,7 @@ $(NAME): $(OBJS)
 $(OBJ_DIR)/%.o: %.c
 	mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) -c $< -o $@
+
+run: $(NAME)
+	./Colleen > out
+	diff main.c out
